@@ -16,11 +16,15 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+    console.log("creating ")
+    console.log("The data got is",req.body)
     const form = new Form({
       ...req.body,
       createdBy: req.user.userId
     });
+    // console.log("The form is ",form)
     await form.save();
+    console.log("saved")
     res.status(201).json(form);
   } catch (error) {
     res.status(500).json({ message: 'Error creating form' });

@@ -4,7 +4,7 @@ const fieldSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['text', 'number', 'dropdown', 'radio', 'checkbox']
+    enum: ['text', 'number', 'dropdown', 'radio', 'checkbox','email']
   },
   label: {
     type: String,
