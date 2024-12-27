@@ -3,7 +3,6 @@ import Form from '../models/Form.js';
 
 const router = express.Router();
 
-// Get all forms for the authenticated user
 router.get('/', async (req, res) => {
   try {
     const forms = await Form.find({ createdBy: req.user.userId })
@@ -15,7 +14,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Create a new form
 router.post('/', async (req, res) => {
   try {
     const form = new Form({
@@ -29,7 +27,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get a specific form
 router.get('/:id', async (req, res) => {
   try {
     const form = await Form.findOne({
@@ -47,7 +44,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Update a form
 router.put('/:id', async (req, res) => {
   try {
     const form = await Form.findOneAndUpdate(
@@ -66,7 +62,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete a form
 router.delete('/:id', async (req, res) => {
   try {
     const form = await Form.findOneAndDelete({

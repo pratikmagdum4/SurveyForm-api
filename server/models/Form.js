@@ -18,7 +18,7 @@ const fieldSchema = new mongoose.Schema({
     required: Boolean,
     minLength: Number,
     maxLength: Number,
-    options: [String] // For dropdown and radio
+    options: [String] 
   }
 });
 
